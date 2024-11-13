@@ -20,13 +20,13 @@
             background-color: #2c3e50;
             padding-top: 20px;
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-            justify-content: space-between;
-            transition: width 0.3s; /* Animasi untuk membuka/menutup */
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
             overflow: hidden;
         }
         .sidebar.closed {
             width: 0;
-            padding-top: 20px; /* Menjaga padding agar tetap ada saat ditutup */
         }
         .sidebar h2 {
             color: white;
@@ -74,7 +74,7 @@
             top: 0;
             left: 250px;
             z-index: 100;
-            transition: left 0.3s;
+            transition: left 0.3s, width 0.3s;
         }
         .header.sidebar-closed {
             left: 0;
@@ -82,7 +82,6 @@
         }
         /* Tombol Logout */
         .logout-button {
-            width: 100%;
             text-align: center;
             padding: 15px;
             font-size: 18px;
@@ -90,7 +89,7 @@
             background-color: #e74c3c;
             border: none;
             cursor: pointer;
-            margin-top: auto; /* Menempatkan tombol di bawah */
+            margin-top: auto;
         }
         .logout-button:hover {
             background-color: #c0392b;
@@ -123,10 +122,11 @@
             <li><a href="{{ route('pembelian.index') }}">📝 Data Pembelian</a></li>
             <li><a href="{{ route('penjualan.index') }}">📊 Laporan Penjualan</a></li>
             <li><a href="{{ route('laporan.laba-kotor') }}">💵 Hitung Laba</a></li>
+            <li><a href="{{ route('profile') }}">👤 Profile</a></li> <!-- Link Profile -->
         </ul>
 
         <!-- Form Logout -->
-        <form method="POST" action="{{ route('logout') }}" style="margin-top: 20px;">
+        <form method="POST" action="{{ route('logout') }}" style="margin-top: auto;">
             @csrf
             <button type="submit" class="logout-button">Logout</button>
         </form>
