@@ -112,12 +112,14 @@
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
-                    <th>Total Penjualan</th>
-                    <td>Rp {{ number_format($totalPenjualan, 0, ',', '.') }}</td>
+                <th>Total Pembelian</th>
+                <td>Rp {{ number_format($totalPembelian, 0, ',', '.') }}</td>
+                   
                 </tr>
+                
                 <tr>
-                    <th>Total Pembelian</th>
-                    <td>Rp {{ number_format($totalPembelian, 0, ',', '.') }}</td>
+                <th>Total Penjualan</th>
+                <td>Rp {{ number_format($totalPenjualan, 0, ',', '.') }}</td>
                 </tr>
                 <tr>
                     <th>Laba Kotor</th>

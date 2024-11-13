@@ -11,13 +11,13 @@ class LaporanController extends Controller
     public function hitungLabaKotor()
     {
         // Menghitung total penjualan
-        $totalPenjualan = Penjualan::all()->sum('total');
+        $totalPenjualan = Penjualan::all()->sum('total_harga');
 
         // Menghitung total pembelian
-        $totalPembelian = Pembelian::all()->sum('total');
+        $totalPembelian = Pembelian::all()->sum('total_harga');
 
         // Menghitung laba kotor
-        $labaKotor = $totalPenjualan - $totalPembelian;
+        $labaKotor = $totalPembelian - $totalPenjualan;
 
         // Mengirim data ke view
         return view('laporan.laba-kotor', compact('totalPenjualan', 'totalPembelian', 'labaKotor'));
